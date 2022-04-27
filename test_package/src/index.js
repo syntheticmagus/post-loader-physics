@@ -1,4 +1,15 @@
-import { initializeBabylonApp } from "app_package";
+import { runDemoScene } from "app_package";
+
+let assetsHostUrl;
+//if (DEV_BUILD) {
+//    assetsHostUrl = "http://127.0.0.1:8181/";
+//} else {
+    assetsHostUrl = "https://syntheticmagus.github.io/first-person-player-assets/";
+//}
+
+const ammoScript = document.createElement("script");
+ammoScript.src = `${assetsHostUrl}ammo/ammo.wasm.js`;
+document.body.appendChild(ammoScript);
 
 document.body.style.width = "100%";
 document.body.style.height = "100%";
@@ -6,7 +17,7 @@ document.body.style.margin = "0";
 document.body.style.padding = "0";
 
 const title = document.createElement("p");
-title.innerText = "Babylon.js NPM Package Template";
+title.innerText = "Physics Post-Loader Demo Scene";
 title.style.fontSize = "32pt";
 title.style.textAlign = "center";
 document.body.appendChild(title);
@@ -24,10 +35,8 @@ canvas.style.height = "100%";
 canvas.style.display = "block";
 div.appendChild(canvas);
 
-let assetsHostUrl;
-if (DEV_BUILD) {
-    assetsHostUrl = "http://127.0.0.1:8181/";
-} else {
-    assetsHostUrl = "https://nonlocal-assets-host-url/";
-}
-initializeBabylonApp({ canvas: canvas, assetsHostUrl: assetsHostUrl });
+setTimeout(() => {
+    Ammo().then(() => {
+        runDemoScene(canvas);
+    });
+}, 1000);
