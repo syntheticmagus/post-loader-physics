@@ -40,9 +40,11 @@ async function createSceneAsync(engine: Engine, canvas: HTMLCanvasElement, asset
 
                                 const playerSpawn = scene.getTransformNodeByName("player_spawn");
                                 if (playerSpawn) {
-                                    const player = new FirstPersonPlayer(scene);
-                                    canvas.requestFullscreen();
-                                    canvas.requestPointerLock();
+                                    new FirstPersonPlayer(playerSpawn.absolutePosition, scene);
+                                    scene.onPointerDown = () => {
+                                        canvas.requestFullscreen();
+                                        canvas.requestPointerLock();
+                                    };
                                 } else {
                                     scene.createDefaultCamera(true, true, true);
                                 }
