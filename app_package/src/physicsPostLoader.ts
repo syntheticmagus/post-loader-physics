@@ -13,7 +13,6 @@ enum PhysicsImpostorParameterNames {
 
 export class PhysicsPostLoader {
     public static AddPhysicsToHierarchy(node: Node, scene: Scene): void {
-        debugger;
         let recurse = true;
         let mesh = node as AbstractMesh;
         if (mesh) {
