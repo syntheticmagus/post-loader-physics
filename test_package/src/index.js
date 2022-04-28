@@ -1,11 +1,11 @@
 import { runDemoScene } from "app_package";
 
 let assetsHostUrl;
-//if (DEV_BUILD) {
-//    assetsHostUrl = "http://127.0.0.1:8181/";
-//} else {
+if (DEV_BUILD) {
+    assetsHostUrl = "http://127.0.0.1:8181/";
+} else {
     assetsHostUrl = "https://syntheticmagus.github.io/first-person-player-assets/";
-//}
+}
 
 const ammoScript = document.createElement("script");
 ammoScript.src = `${assetsHostUrl}ammo/ammo.wasm.js`;
@@ -37,6 +37,6 @@ div.appendChild(canvas);
 
 setTimeout(() => {
     Ammo().then(() => {
-        runDemoScene(canvas);
+        runDemoScene(canvas, assetsHostUrl);
     });
 }, 1000);
