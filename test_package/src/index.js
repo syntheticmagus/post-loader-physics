@@ -4,7 +4,7 @@ let assetsHostUrl;
 if (DEV_BUILD) {
     assetsHostUrl = "http://127.0.0.1:8181/";
 } else {
-    assetsHostUrl = "https://syntheticmagus.github.io/first-person-player-assets/";
+    assetsHostUrl = "https://syntheticmagus.github.io/post-loader-physics-assets/";
 }
 
 const ammoScript = document.createElement("script");

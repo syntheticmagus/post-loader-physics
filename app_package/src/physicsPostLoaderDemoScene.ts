@@ -42,7 +42,6 @@ async function createSceneAsync(engine: Engine, canvas: HTMLCanvasElement, asset
                                 if (playerSpawn) {
                                     new FirstPersonPlayer(playerSpawn.absolutePosition, scene);
                                     scene.onPointerDown = () => {
-                                        canvas.requestFullscreen();
                                         canvas.requestPointerLock();
                                     };
                                 } else {
