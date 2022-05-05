@@ -1,4 +1,4 @@
-import { runDemoScene } from "app_package";
+import { runDemoScene } from "@syntheticmagus/physics-post-loader";
 
 let assetsHostUrl;
 if (DEV_BUILD) {

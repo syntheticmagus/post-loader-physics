@@ -1,6 +1,6 @@
 {
-  "name": "app_package",
-  "version": "1.0.0",
+  "name": "@syntheticmagus/physics-post-loader",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib",
@@ -11,6 +11,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "typescript": "^4.4.3"
   },
